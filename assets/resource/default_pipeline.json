@@ -1,0 +1,10 @@
+{
+    "Default": {
+        "rate_limit": 1000,
+        "focus": true
+    },
+    "TemplateMatch": {
+        "recognition": "TemplateMatch",
+        "threshold": 0.7
+    }
+}

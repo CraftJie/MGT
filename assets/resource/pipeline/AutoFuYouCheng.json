@@ -1,0 +1,129 @@
+{
+    "任务_领取浮游城奖励": {
+        "next": [
+            "点击_小公主宝箱",
+            "点击_浮游城金币"
+        ],
+        "timeout": 6000,
+        "on_error": "滑动_移动到守护者基地"
+    },
+    "点击_小公主宝箱": {
+        "recognition": "TemplateMatch",
+        "template": "小公主宝箱.png",
+        "roi": [
+            577,
+            316,
+            140,
+            122
+        ],
+        "action": "Click",
+        "next": "点击_关闭小公主宝箱弹窗",
+        "focus_tip": "动作：领取小公主宝箱"
+    },
+    "点击_关闭小公主宝箱弹窗": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭弹窗",
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "action": "Click",
+        "next": "点击_浮游城金币",
+        "post_delay": 600
+    },
+    "点击_浮游城金币": {
+        "recognition": "TemplateMatch",
+        "template": "浮游城金币.png",
+        "roi": [
+            340,
+            150,
+            630,
+            410
+        ],
+        "action": "Click",
+        "next": "滑动_移动到守护者基地",
+        "focus_tip": "动作：领取浮游城金币"
+    },
+    "滑动_移动到守护者基地": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            700,
+            1,
+            1
+        ],
+        "end": [
+            640,
+            400,
+            1,
+            1
+        ],
+        "next": "点击_守护者基地"
+    },
+    "点击_守护者基地": {
+        "recognition": "OCR",
+        "expected": "守护者基地",
+        "action": "Click",
+        "target_offset": [
+            0,
+            15,
+            0,
+            0
+        ],
+        "next": "点击_领取守护者积分"
+    },
+    "点击_领取守护者积分": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "action": "Click",
+        "roi": [
+            1025,
+            590,
+            150,
+            50
+        ],
+        "next": "点击_关闭领取守护者积分弹窗",
+        "focus_tip": "动作：领取守护者积分"
+    },
+    "点击_关闭领取守护者积分弹窗": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭弹窗",
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "action": "Click",
+        "next": "点击_退出守护者基地",
+        "pre_delay": 500
+    },
+    "点击_退出守护者基地": {
+        "action": "Click",
+        "target": [
+            583,
+            695,
+            154,
+            20
+        ],
+        "post_delay": 800,
+        "next": "滑动_回到浮游城中心"
+    },
+    "滑动_回到浮游城中心": {
+        "action": "Swipe",
+        "begin": [
+            640,
+            400,
+            1,
+            1
+        ],
+        "end": [
+            640,
+            700,
+            1,
+            1
+        ]
+    }
+}

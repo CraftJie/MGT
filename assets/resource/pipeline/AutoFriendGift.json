@@ -1,0 +1,69 @@
+{
+    "任务_好友礼物领取及送礼": {
+        "next": "点击_菜单"
+    },
+    "点击_菜单": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            31,
+            607,
+            96,
+            98
+        ],
+        "expected": "菜单",
+        "next": "点击_好友"
+    },
+    "点击_好友": {
+        "recognition": "OCR",
+        "action": "Click",
+        "post_delay": 800,
+        "roi": [
+            227,
+            553,
+            103,
+            41
+        ],
+        "expected": "好友",
+        "next": "点击_一键领取送礼"
+    },
+    "点击_一键领取送礼": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            363,
+            639,
+            198,
+            43
+        ],
+        "expected": "一键领取送礼",
+        "next": "点击_确认向好友发送礼物"
+    },
+    "点击_确认向好友发送礼物": {
+        "recognition": "OCR",
+        "timeout": 4000,
+        "post_delay": 800,
+        "roi": [
+            534,
+            553,
+            212,
+            56
+        ],
+        "expected": "确认",
+        "next": [
+            "点击_退出好友界面",
+            "结束"
+        ]
+    },
+    "点击_退出好友界面": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            62,
+            13,
+            67,
+            49
+        ],
+        "expected": "好友"
+    }
+}
