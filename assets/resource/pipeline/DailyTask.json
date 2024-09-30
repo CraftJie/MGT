@@ -1,0 +1,102 @@
+{
+    "任务_领取任务奖励": {
+        "next": "判断_是否进行领取任务奖励",
+        "interrupt": [
+            "点击_关闭弹窗",
+            "点击_左上角退出"
+        ],
+        "timeout": 6000,
+        "on_error": "结束_任务奖励已领取并跳过"
+    },
+    "判断_是否进行领取任务奖励": {
+        "recognition": "ColorMatch",
+        "next": "点击_任务按钮",
+        "roi": [
+            842,
+            643,
+            35,
+            32
+        ],
+        "lower": [
+            255,
+            49,
+            49
+        ],
+        "upper": [
+            255,
+            49,
+            49
+        ]
+    },
+    "点击_任务按钮": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_全部领取",
+        "post_delay": 2000,
+        "roi": [
+            787,
+            656,
+            98,
+            55
+        ],
+        "expected": "任务"
+    },
+    "点击_全部领取": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_每日任务领取弹窗",
+        "pre_delay": 400,
+        "roi": [
+            1049,
+            614,
+            168,
+            50
+        ],
+        "expected": "全部领取"
+    },
+    "点击_每日任务领取弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_已获得",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗"
+    },
+    "点击_已获得": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            90,
+            620,
+            185,
+            45
+        ],
+        "expected": "已获得",
+        "next": "点击_每日任务奖励弹窗",
+        "focus_tip": "动作：领取每日任务奖励",
+        "focus_tip_color": "Pink"
+    },
+    "点击_每日任务奖励弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗",
+        "next": "点击_左上角退出"
+    },
+    "结束_任务奖励已领取并跳过": {
+        "focus_tip": "任务奖励已领取，跳过"
+    }
+}

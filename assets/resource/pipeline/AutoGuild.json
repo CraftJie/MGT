@@ -1,0 +1,145 @@
+{
+    "任务_公会签到": {
+        "next": "判断_是否进行公会签到",
+        "interrupt": [
+            "点击_关闭弹窗",
+            "点击_左上角退出"
+        ],
+        "timeout": 3000,
+        "on_error": "结束_公会已签到并跳过"
+    },
+    "判断_是否进行公会签到": {
+        "recognition": "ColorMatch",
+        "roi": [
+            500,
+            645,
+            25,
+            25
+        ],
+        "lower": [
+            255,
+            49,
+            49
+        ],
+        "upper": [
+            255,
+            49,
+            49
+        ],
+        "next": "点击_公会"
+    },
+    "点击_公会": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_确认进入公会",
+        "roi": [
+            50,
+            600,
+            500,
+            100
+        ],
+        "expected": "公会"
+    },
+    "点击_确认进入公会": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_和公会NPC交互",
+        "interrupt": "滑动_移动到公会NPC处",
+        "post_delay": 8000,
+        "expected": "确认"
+    },
+    "点击_和公会NPC交互": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_公会签到奖励",
+        "timeout": 10000,
+        "on_error": "点击_关闭公会签到界面",
+        "pre_delay": 400,
+        "post_delay": 1000,
+        "roi": [
+            1090,
+            535,
+            110,
+            110
+        ],
+        "template": "公会NPC交互.png"
+    },
+    "滑动_移动到公会NPC处": {
+        "action": "Swipe",
+        "begin": [
+            190,
+            510,
+            1,
+            1
+        ],
+        "end": [
+            190,
+            420,
+            1,
+            1
+        ]
+    },
+    "点击_公会签到奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭公会签到奖励弹窗",
+        "timeout": 3000,
+        "on_error": "点击_关闭公会签到界面",
+        "focus_tip": "动作：公会签到完成",
+        "focus_tip_color": "Pink",
+        "roi": [
+            444,
+            214,
+            128,
+            443
+        ],
+        "expected": "签到奖励"
+    },
+    "点击_关闭公会签到奖励弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭公会签到界面",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗"
+    },
+    "点击_关闭公会签到界面": {
+        "action": "Click",
+        "next": "点击_退出公会大厅",
+        "pre_delay": 600,
+        "roi": [
+            1200,
+            110,
+            25,
+            25
+        ]
+    },
+    "点击_退出公会大厅": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_确认回到主城",
+        "pre_delay": 600,
+        "roi": [
+            1218,
+            17,
+            40,
+            30
+        ],
+        "template": "公会退出按钮.png"
+    },
+    "点击_确认回到主城": {
+        "recognition": "OCR",
+        "action": "Click",
+        "post_delay": 8000,
+        "expected": "确认"
+    },
+    "结束_公会已签到并跳过": {
+        "focus_tip": "公会已签到，跳过"
+    }
+}

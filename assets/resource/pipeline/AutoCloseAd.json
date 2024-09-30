@@ -61,7 +61,8 @@
         "action": "Click",
         "next": "点击_领取每日奖励",
         "post_delay": 2000,
-        "focus_tip": "动作：自动签到"
+        "focus_tip": "动作：自动签到",
+        "focus_tip_color": "Pink"
     },
     "点击_领取每日奖励": {
         "recognition": "OCR",

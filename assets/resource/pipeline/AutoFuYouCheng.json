@@ -4,7 +4,7 @@
             "点击_小公主宝箱",
             "点击_浮游城金币"
         ],
-        "timeout": 6000,
+        "timeout": 4000,
         "on_error": "滑动_移动到守护者基地"
     },
     "点击_小公主宝箱": {
@@ -18,7 +18,8 @@
         ],
         "action": "Click",
         "next": "点击_关闭小公主宝箱弹窗",
-        "focus_tip": "动作：领取小公主宝箱"
+        "focus_tip": "动作：领取小公主宝箱",
+        "focus_tip_color": "Pink"
     },
     "点击_关闭小公主宝箱弹窗": {
         "recognition": "OCR",
@@ -30,7 +31,8 @@
             40
         ],
         "action": "Click",
-        "next": "点击_浮游城金币",
+        "next": "任务_领取浮游城奖励",
+        "pre_delay": 400,
         "post_delay": 600
     },
     "点击_浮游城金币": {
@@ -43,8 +45,9 @@
             410
         ],
         "action": "Click",
-        "next": "滑动_移动到守护者基地",
-        "focus_tip": "动作：领取浮游城金币"
+        "next": "任务_领取浮游城奖励",
+        "focus_tip": "动作：领取浮游城金币",
+        "focus_tip_color": "Pink"
     },
     "滑动_移动到守护者基地": {
         "action": "Swipe",
@@ -60,7 +63,8 @@
             1,
             1
         ],
-        "next": "点击_守护者基地"
+        "next": "点击_守护者基地",
+        "timeout": 4000
     },
     "点击_守护者基地": {
         "recognition": "OCR",
@@ -85,7 +89,8 @@
             50
         ],
         "next": "点击_关闭领取守护者积分弹窗",
-        "focus_tip": "动作：领取守护者积分"
+        "focus_tip": "动作：领取守护者积分",
+        "focus_tip_color": "Pink"
     },
     "点击_关闭领取守护者积分弹窗": {
         "recognition": "OCR",
