@@ -1,0 +1,241 @@
+{
+    "任务_觉醒副本扫荡": {
+        "next": "点击_游玩按钮_裂痕"
+    },
+    "点击_游玩按钮_裂痕": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_裂痕",
+        "post_delay": 1000,
+        "roi": [
+            784,
+            653,
+            451,
+            56
+        ],
+        "expected": "游玩"
+    },
+    "点击_裂痕": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_觉醒副本",
+        "roi": [
+            42,
+            91,
+            1192,
+            254
+        ],
+        "expected": "裂痕"
+    },
+    "点击_觉醒副本": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_是否为觉醒副本",
+        "interrupt": "点击_觉醒副本",
+        "roi": [
+            49,
+            145,
+            1178,
+            49
+        ],
+        "expected": "觉醒"
+    },
+    "判断_是否为觉醒副本": {
+        "recognition": "OCR",
+        "next": "点击_觉醒副本扫荡",
+        "timeout": 3000,
+        "on_error": "点击_左上角退出-觉醒副本无扫荡次数",
+        "roi": [
+            46,
+            444,
+            388,
+            231
+        ],
+        "expected": "觉醒副本"
+    },
+    "点击_觉醒副本扫荡": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_次数是否为3",
+        "interrupt": "点击_扫荡次数+1",
+        "roi": [
+            132,
+            617,
+            215,
+            48
+        ],
+        "expected": "扫荡"
+    },
+    "判断_次数是否为3": {
+        "recognition": "OCR",
+        "next": "判断_钻石数是否为0",
+        "roi": [
+            371,
+            368,
+            213,
+            36
+        ],
+        "expected": "3"
+    },
+    "判断_钻石数是否为0": {
+        "recognition": "OCR",
+        "next": "点击_开始扫荡",
+        "roi": [
+            808,
+            472,
+            134,
+            31
+        ],
+        "expected": "0"
+    },
+    "点击_开始扫荡": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_觉醒副本奖励确认",
+        "post_delay": 5000,
+        "focus_tip": "动作：觉醒副本扫荡",
+        "focus_tip_color": "Pink",
+        "roi": [
+            650,
+            584,
+            191,
+            53
+        ],
+        "expected": "扫荡"
+    },
+    "点击_觉醒副本奖励确认": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭觉醒副本奖励弹窗",
+        "roi": [
+            537,
+            569,
+            204,
+            57
+        ],
+        "expected": "确认"
+    },
+    "点击_关闭觉醒副本奖励弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_左上角退出",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗"
+    },
+    "点击_左上角退出-觉醒副本无扫荡次数": {
+        "next": "点击_左上角退出",
+        "focus_tip": "提示：觉醒副本无扫荡次数，跳过"
+    },
+    "任务_圆形角斗场": {
+        "next": "点击_游玩按钮_圆形"
+    },
+    "点击_游玩按钮_圆形": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_推荐_圆形",
+        "post_delay": 1000,
+        "roi": [
+            784,
+            653,
+            451,
+            56
+        ],
+        "expected": "游玩"
+    },
+    "点击_推荐_圆形": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_圆形角斗场",
+        "roi": [
+            42,
+            91,
+            1192,
+            254
+        ],
+        "expected": "PvP"
+    },
+    "点击_圆形角斗场": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_第二位敌人是否可以进攻",
+        "timeout": 3000,
+        "on_error": "结束_圆形角斗场无次数并退出",
+        "roi": [
+            44,
+            149,
+            1190,
+            527
+        ],
+        "expected": "圆形角斗场"
+    },
+    "判断_第二位敌人是否可以进攻": {
+        "recognition": "ColorMatch",
+        "action": "Click",
+        "next": "点击_开始战斗_圆形角斗场",
+        "interrupt": "点击_确认",
+        "roi": [
+            1062,
+            519,
+            25,
+            61
+        ],
+        "lower": [
+            255,
+            207,
+            17
+        ],
+        "upper": [
+            255,
+            207,
+            17
+        ]
+    },
+    "点击_开始战斗_圆形角斗场": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_确认奖励_圆形角斗场",
+        "rate_limit": 3000,
+        "timeout": 60000,
+        "post_delay": 20000,
+        "roi": [
+            736,
+            618,
+            140,
+            48
+        ],
+        "expected": "开始战斗",
+        "focus_tip": "动作：开始圆形角斗场战斗",
+        "focus_tip_color": "Pink"
+    },
+    "点击_确认奖励_圆形角斗场": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_第二位敌人是否可以进攻",
+        "interrupt": [
+            "点击_关闭弹窗",
+            "点击_确认"
+        ],
+        "timeout": 5000,
+        "post_delay": 5000,
+        "on_error": "点击_左上角退出X2",
+        "roi": [
+            936,
+            629,
+            207,
+            56
+        ],
+        "expected": "确认",
+        "focus_tip": "提示：领取圆形角斗场奖励"
+    },
+    "结束_圆形角斗场无次数并退出": {
+        "next": "点击_左上角退出X2",
+        "focus_tip": "提示：圆形角斗场无次数，跳过"
+    }
+}

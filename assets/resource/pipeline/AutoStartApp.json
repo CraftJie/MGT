@@ -34,10 +34,6 @@
         "post_delay": 15000,
         "focus_tip": "动作：点击开始游戏"
     },
-    "结束": {
-        "recognition": "DirectHit",
-        "action": "DoNothing"
-    },
     "点击_空屏": {
         "action": "Click",
         "target": [

@@ -27,7 +27,8 @@
         "interrupt": "点击_关闭弹窗",
         "timeout": 2000,
         "on_error": "点击_资源",
-        "focus_tip": "动作：领取礼包"
+        "focus_tip": "动作：领取礼包",
+        "focus_tip_color": "Pink"
     },
     "点击_资源": {
         "recognition": "OCR",
@@ -67,7 +68,8 @@
         "action": "Click",
         "next": "点击_关闭免费金币弹窗",
         "post_delay": 800,
-        "focus_tip": "动作：领取商店每日金币"
+        "focus_tip": "动作：领取商店每日金币",
+        "focus_tip_color": "Pink"
     },
     "点击_关闭免费金币弹窗": {
         "recognition": "OCR",

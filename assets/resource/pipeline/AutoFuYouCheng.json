@@ -1,56 +1,58 @@
 {
     "任务_领取浮游城奖励": {
         "next": [
-            "点击_小公主宝箱",
-            "点击_浮游城金币"
+            "点击_浮游城金币",
+            "点击_小公主宝箱"
         ],
         "timeout": 4000,
         "on_error": "滑动_移动到守护者基地"
     },
     "点击_小公主宝箱": {
         "recognition": "TemplateMatch",
-        "template": "小公主宝箱.png",
+        "action": "Click",
+        "next": "点击_关闭小公主宝箱弹窗",
+        "focus_tip": "动作：领取小公主宝箱",
+        "focus_tip_color": "Pink",
         "roi": [
             577,
             316,
             140,
             122
         ],
-        "action": "Click",
-        "next": "点击_关闭小公主宝箱弹窗",
-        "focus_tip": "动作：领取小公主宝箱",
-        "focus_tip_color": "Pink"
+        "template": "小公主宝箱.png"
     },
     "点击_关闭小公主宝箱弹窗": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭弹窗",
+        "action": "Click",
+        "next": "任务_领取浮游城奖励",
+        "pre_delay": 400,
+        "post_delay": 600,
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "action": "Click",
-        "next": "任务_领取浮游城奖励",
-        "pre_delay": 400,
-        "post_delay": 600
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_浮游城金币": {
         "recognition": "TemplateMatch",
-        "template": "浮游城金币.png",
+        "action": "Click",
+        "next": "任务_领取浮游城奖励",
+        "focus_tip": "动作：领取浮游城金币",
+        "focus_tip_color": "Pink",
         "roi": [
             340,
             150,
             630,
             410
         ],
-        "action": "Click",
-        "next": "任务_领取浮游城奖励",
-        "focus_tip": "动作：领取浮游城金币",
-        "focus_tip_color": "Pink"
+        "template": "浮游城金币.png"
     },
     "滑动_移动到守护者基地": {
         "action": "Swipe",
+        "next": "点击_守护者基地",
+        "timeout": 4000,
         "begin": [
             640,
             700,
@@ -62,62 +64,62 @@
             400,
             1,
             1
-        ],
-        "next": "点击_守护者基地",
-        "timeout": 4000
+        ]
     },
     "点击_守护者基地": {
         "recognition": "OCR",
-        "expected": "守护者基地",
         "action": "Click",
+        "next": "点击_领取守护者积分",
+        "expected": "守护者基地",
         "target_offset": [
             0,
             15,
             0,
             0
-        ],
-        "next": "点击_领取守护者积分"
+        ]
     },
     "点击_领取守护者积分": {
         "recognition": "OCR",
-        "expected": "领取",
         "action": "Click",
+        "next": "点击_关闭领取守护者积分弹窗",
+        "focus_tip": "动作：领取守护者积分",
+        "focus_tip_color": "Pink",
         "roi": [
             1025,
             590,
             150,
             50
         ],
-        "next": "点击_关闭领取守护者积分弹窗",
-        "focus_tip": "动作：领取守护者积分",
-        "focus_tip_color": "Pink"
+        "expected": "领取"
     },
     "点击_关闭领取守护者积分弹窗": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭弹窗",
+        "action": "Click",
+        "next": "点击_退出守护者基地",
+        "pre_delay": 500,
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "action": "Click",
-        "next": "点击_退出守护者基地",
-        "pre_delay": 500
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_退出守护者基地": {
         "action": "Click",
+        "next": "滑动_回到浮游城中心",
+        "post_delay": 800,
         "target": [
             583,
             695,
             154,
             20
-        ],
-        "post_delay": 800,
-        "next": "滑动_回到浮游城中心"
+        ]
     },
     "滑动_回到浮游城中心": {
         "action": "Swipe",
+        "next": "点击_浮游城商店",
+        "post_delay": 2000,
         "begin": [
             640,
             400,
@@ -126,9 +128,49 @@
         ],
         "end": [
             640,
-            700,
+            850,
             1,
             1
         ]
+    },
+    "点击_浮游城商店": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_灵魂币商品",
+        "timeout": 3000,
+        "on_error": "点击_退出浮游城商店",
+        "template": "浮游城商店.png"
+    },
+    "点击_灵魂币商品": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_灵魂币确认",
+        "roi": [
+            690,
+            31,
+            510,
+            604
+        ],
+        "template": "浮游城_商店_灵魂币.png",
+        "timeout": 3000
+    },
+    "点击_灵魂币确认": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_灵魂币商品",
+        "interrupt": "点击_关闭弹窗",
+        "timeout": 2000,
+        "template": "浮游城_商店_灵魂币确认.png"
+    },
+    "点击_退出浮游城商店": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "roi": [
+            1205,
+            11,
+            64,
+            64
+        ],
+        "template": "浮游城_商店_X.png"
     }
 }

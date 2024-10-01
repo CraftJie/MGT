@@ -5,8 +5,8 @@
             "点击_关闭弹窗",
             "点击_左上角退出"
         ],
-        "timeout": 6000,
-        "on_error": "结束_任务奖励已领取并跳过"
+        "timeout": 3000,
+        "on_error": "结束_无任务奖励可领取并跳过"
     },
     "判断_是否进行领取任务奖励": {
         "recognition": "ColorMatch",
@@ -59,7 +59,7 @@
         "action": "Click",
         "next": "点击_已获得",
         "pre_delay": 400,
-        "post_delay": 600,
+        "post_delay": 1200,
         "roi": [
             540,
             650,
@@ -71,32 +71,193 @@
     "点击_已获得": {
         "recognition": "OCR",
         "action": "Click",
+        "next": [
+            "点击_每日任务奖励弹窗",
+            "点击_活跃度不足并退出"
+        ],
+        "interrupt": "点击_已获得x2",
+        "on_error": "点击_左上角退出",
         "roi": [
             90,
             620,
             185,
             45
         ],
-        "expected": "已获得",
-        "next": "点击_每日任务奖励弹窗",
-        "focus_tip": "动作：领取每日任务奖励",
-        "focus_tip_color": "Pink"
+        "expected": "已获得"
     },
     "点击_每日任务奖励弹窗": {
         "recognition": "OCR",
         "action": "Click",
+        "next": "点击_左上角退出",
         "pre_delay": 400,
         "post_delay": 600,
+        "focus_tip": "动作：领取每日任务奖励",
+        "focus_tip_color": "Pink",
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "expected": "点击空白处关闭弹窗",
-        "next": "点击_左上角退出"
+        "expected": "点击空白处关闭弹窗"
     },
-    "结束_任务奖励已领取并跳过": {
-        "focus_tip": "任务奖励已领取，跳过"
+    "结束_无任务奖励可领取并跳过": {
+        "focus_tip": "提示：无任务奖励可领取，跳过"
+    },
+    "点击_已获得x2": {
+        "recognition": "OCR",
+        "action": "Click",
+        "roi": [
+            90,
+            620,
+            185,
+            45
+        ],
+        "expected": "已获得"
+    },
+    "点击_活跃度不足并退出": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_左上角退出",
+        "roi": [
+            432,
+            310,
+            396,
+            64
+        ],
+        "expected": "活跃度不足",
+        "target": [
+            569,
+            558,
+            138,
+            43
+        ]
+    },
+    "任务_领取邀请函奖励": {
+        "next": "判断_当前轮播是否为守护者邀请赛"
+    },
+    "判断_当前轮播是否为守护者邀请赛": {
+        "recognition": "OCR",
+        "next": "判断_是否有守护者奖励待领取",
+        "on_error": "结束_无邀请函可领取并跳过",
+        "roi": [
+            334,
+            16,
+            96,
+            56
+        ],
+        "expected": [
+            "邀请赛",
+            "请"
+        ]
+    },
+    "判断_是否有守护者奖励待领取": {
+        "recognition": "ColorMatch",
+        "action": "Click",
+        "next": "判断_是否有邀请函目标待领取",
+        "roi": [
+            437,
+            68,
+            16,
+            14
+        ],
+        "lower": [
+            255,
+            49,
+            49
+        ],
+        "upper": [
+            255,
+            49,
+            49
+        ],
+        "target": [
+            331,
+            36,
+            100,
+            36
+        ],
+        "timeout": 3000,
+        "on_error": "判断_是否有邀请函奖励待领取"
+    },
+    "判断_是否有邀请函目标待领取": {
+        "recognition": "ColorMatch",
+        "action": "Click",
+        "next": "点击_领取邀请函目标",
+        "timeout": 2000,
+        "roi": [
+            980,
+            91,
+            24,
+            28
+        ],
+        "lower": [
+            247,
+            49,
+            49
+        ],
+        "upper": [
+            255,
+            49,
+            50
+        ]
+    },
+    "点击_领取邀请函目标": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_是否有邀请函奖励待领取",
+        "interrupt": "点击_关闭弹窗",
+        "timeout": 5000,
+        "on_error": "点击_左上角退出",
+        "focus_tip": "动作：领取邀请函目标",
+        "focus_tip_color": "Pink",
+        "roi": [
+            1069,
+            626,
+            166,
+            50
+        ],
+        "expected": "全部领取"
+    },
+    "判断_是否有邀请函奖励待领取": {
+        "recognition": "ColorMatch",
+        "action": "Click",
+        "next": "点击_领取邀请函奖励",
+        "timeout": 2000,
+        "roi": [
+            585,
+            97,
+            18,
+            16
+        ],
+        "lower": [
+            247,
+            49,
+            49
+        ],
+        "upper": [
+            255,
+            49,
+            50
+        ]
+    },
+    "点击_领取邀请函奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭弹窗并退出",
+        "timeout": 3000,
+        "on_error": "点击_左上角退出",
+        "focus_tip": "动作：领取邀请函奖励",
+        "focus_tip_color": "Pink",
+        "roi": [
+            1069,
+            626,
+            166,
+            50
+        ],
+        "expected": "全部领取"
+    },
+    "结束_无邀请函可领取并跳过": {
+        "focus_tip": "提示：无邀请函可领取,跳过"
     }
 }

@@ -49,24 +49,25 @@
             20
         ],
         "pre_delay": 500,
-        "next": "点击_确认向好友发送礼物",
+        "next": "点击_关闭好友礼物弹窗",
+        "timeout": 3000,
+        "on_error": "点击_退出好友界面",
         "focus_tip": "动作：一键领取并送礼",
         "focus_tip_color": "Pink"
     },
-    "点击_确认向好友发送礼物": {
+    "点击_关闭好友礼物弹窗": {
         "recognition": "OCR",
-        "pre_delay": 500,
-        "post_delay": 800,
+        "expected": "点击空白处关闭弹窗",
         "roi": [
-            534,
-            553,
-            212,
-            56
+            540,
+            650,
+            195,
+            40
         ],
-        "expected": "确认",
-        "next": [
-            "点击_退出好友界面"
-        ]
+        "action": "Click",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "next": "点击_退出好友界面"
     },
     "点击_退出好友界面": {
         "recognition": "OCR",
