@@ -31,7 +31,7 @@
     "点击_任务按钮": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_全部领取",
+        "next": "点击_日常",
         "post_delay": 2000,
         "roi": [
             787,
@@ -40,6 +40,12 @@
             55
         ],
         "expected": "任务"
+    },
+    "点击_日常": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_全部领取",
+        "expected": "日常"
     },
     "点击_全部领取": {
         "recognition": "OCR",
@@ -60,6 +66,7 @@
         "next": "点击_已获得",
         "pre_delay": 400,
         "post_delay": 1200,
+        "focus_tip": "动作：领取每日任务",
         "roi": [
             540,
             650,
@@ -155,6 +162,8 @@
         "recognition": "ColorMatch",
         "action": "Click",
         "next": "判断_是否有邀请函目标待领取",
+        "timeout": 2000,
+        "on_error": "判断_是否有邀请函奖励待领取",
         "roi": [
             437,
             68,
@@ -176,15 +185,13 @@
             36,
             100,
             36
-        ],
-        "timeout": 3000,
-        "on_error": "判断_是否有邀请函奖励待领取"
+        ]
     },
     "判断_是否有邀请函目标待领取": {
         "recognition": "ColorMatch",
         "action": "Click",
         "next": "点击_领取邀请函目标",
-        "timeout": 2000,
+        "timeout": 1000,
         "roi": [
             980,
             91,

@@ -47,15 +47,15 @@
             "entry": "任务_公会签到"
         },
         {
-            "name": "每日游玩",
-            "entry": "任务_每日游玩",
-            "option": [
-                "裂痕"
-            ]
-        },
-        {
             "name": "觉醒副本扫荡",
             "entry": "任务_觉醒副本扫荡"
+        },
+        {
+            "name": "进化石副本扫荡(默认最大体力)",
+            "entry": "任务_进化石副本",
+            "option": [
+                "选项_进化石副本属性"
+            ]
         },
         {
             "name": "圆形角斗场(默认选择第二个，只适合摆烂玩家)",
@@ -71,15 +71,61 @@
         }
     ],
     "option": {
-        "裂痕": {
+        "选项_进化石副本属性": {
             "cases": [
                 {
-                    "name": "进化石副本",
-                    "pipeline_override": {}
+                    "name": "虚",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "虚属性进化石副本",
+                            "focus_tip": "动作：选择虚属性进化石副本"
+                        }
+                    }
                 },
                 {
-                    "name": "资源副本",
-                    "pipeline_override": {}
+                    "name": "土",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "土属性进化石副本",
+                            "focus_tip": "动作：选择土属性进化石副本"
+                        }
+                    }
+                },
+                {
+                    "name": "光",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "光属性进化石副本",
+                            "focus_tip": "动作：选择光属性进化石副本"
+                        }
+                    }
+                },
+                {
+                    "name": "火",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "火属性进化石副本",
+                            "focus_tip": "动作：选择火属性进化石副本"
+                        }
+                    }
+                },
+                {
+                    "name": "暗",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "暗属性进化石副本",
+                            "focus_tip": "动作：选择暗属性进化石副本"
+                        }
+                    }
+                },
+                {
+                    "name": "水",
+                    "pipeline_override": {
+                        "选择_进化石副本属性": {
+                            "expected": "水属性进化石副本",
+                            "focus_tip": "动作：选择水属性进化石副本"
+                        }
+                    }
                 }
             ]
         }

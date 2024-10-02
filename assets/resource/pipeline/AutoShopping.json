@@ -4,103 +4,103 @@
     },
     "点击_商场": {
         "recognition": "OCR",
-        "expected": "商店",
+        "action": "Click",
+        "next": [
+            "确认_是否有礼包待领取",
+            "点击_资源"
+        ],
+        "timeout": 6000,
+        "post_delay": 2000,
         "roi": [
             386,
             670,
             60,
             36
         ],
-        "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "确认_是否有礼包待领取",
-            "点击_资源"
-        ],
-        "timeout": 6000
+        "expected": "商店"
     },
     "确认_是否有礼包待领取": {
         "recognition": "OCR",
-        "expected": "立即领取",
         "action": "Click",
         "next": "确认_是否有礼包待领取",
         "interrupt": "点击_关闭弹窗",
         "timeout": 2000,
         "on_error": "点击_资源",
         "focus_tip": "动作：领取礼包",
-        "focus_tip_color": "Pink"
+        "focus_tip_color": "Pink",
+        "expected": "立即领取"
     },
     "点击_资源": {
         "recognition": "OCR",
-        "expected": "资源",
+        "action": "Click",
+        "next": "点击_每日免费金币",
+        "timeout": 3000,
+        "on_error": "点击_退出商店",
         "roi": [
             60,
             225,
             70,
             45
         ],
-        "action": "Click",
-        "next": "点击_每日免费金币",
-        "timeout": 3000,
-        "on_error": "点击_退出商店"
+        "expected": "资源"
     },
     "点击_每日免费金币": {
         "recognition": "OCR",
-        "expected": "免费",
+        "action": "Click",
+        "next": "点击_免费",
         "roi": [
             830,
             430,
             120,
             45
         ],
-        "action": "Click",
-        "next": "点击_免费"
+        "expected": "免费"
     },
     "点击_免费": {
         "recognition": "OCR",
-        "expected": "免费",
+        "action": "Click",
+        "next": "点击_关闭免费金币弹窗",
+        "post_delay": 800,
+        "focus_tip": "动作：领取商店每日金币",
+        "focus_tip_color": "Pink",
         "roi": [
             695,
             560,
             120,
             40
         ],
-        "action": "Click",
-        "next": "点击_关闭免费金币弹窗",
-        "post_delay": 800,
-        "focus_tip": "动作：领取商店每日金币",
-        "focus_tip_color": "Pink"
+        "expected": "免费"
     },
     "点击_关闭免费金币弹窗": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭弹窗",
+        "action": "Click",
+        "next": "点击_退出商店",
+        "pre_delay": 400,
+        "post_delay": 600,
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "action": "Click",
-        "next": "点击_退出商店",
-        "pre_delay": 400,
-        "post_delay": 600
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_退出商店": {
         "recognition": "OCR",
-        "expected": "商店",
+        "action": "Click",
+        "post_delay": 1000,
         "roi": [
             64,
             12,
             65,
             45
         ],
+        "expected": "商店",
         "target": [
             40,
             27,
             15,
             15
-        ],
-        "action": "Click",
-        "post_delay": 1000
+        ]
     }
 }

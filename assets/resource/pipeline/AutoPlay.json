@@ -1,11 +1,11 @@
 {
     "任务_觉醒副本扫荡": {
-        "next": "点击_游玩按钮_裂痕"
+        "next": "点击_游玩按钮_觉醒副本"
     },
-    "点击_游玩按钮_裂痕": {
+    "点击_游玩按钮_觉醒副本": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_裂痕",
+        "next": "点击_裂痕_觉醒副本",
         "post_delay": 1000,
         "roi": [
             784,
@@ -15,7 +15,7 @@
         ],
         "expected": "游玩"
     },
-    "点击_裂痕": {
+    "点击_裂痕_觉醒副本": {
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_觉醒副本",
@@ -79,7 +79,7 @@
     },
     "判断_钻石数是否为0": {
         "recognition": "OCR",
-        "next": "点击_开始扫荡",
+        "next": "点击_开始扫荡_觉醒副本",
         "roi": [
             808,
             472,
@@ -88,7 +88,7 @@
         ],
         "expected": "0"
     },
-    "点击_开始扫荡": {
+    "点击_开始扫荡_觉醒副本": {
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_觉醒副本奖励确认",
@@ -132,6 +132,116 @@
     "点击_左上角退出-觉醒副本无扫荡次数": {
         "next": "点击_左上角退出",
         "focus_tip": "提示：觉醒副本无扫荡次数，跳过"
+    },
+    "任务_进化石副本": {
+        "next": "点击_游玩按钮_进化石"
+    },
+    "点击_游玩按钮_进化石": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_裂痕_进化石",
+        "post_delay": 1000,
+        "roi": [
+            784,
+            653,
+            451,
+            56
+        ],
+        "expected": "游玩"
+    },
+    "点击_裂痕_进化石": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "选择_进化石副本属性",
+        "roi": [
+            42,
+            91,
+            1192,
+            254
+        ],
+        "expected": "裂痕"
+    },
+    "选择_进化石副本属性": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "判断_是否为进化石自动战斗",
+        "post_delay": 1000
+    },
+    "判断_是否为进化石自动战斗": {
+        "recognition": "OCR",
+        "next": "判断_是否可进行进化石自动战斗",
+        "timeout": 500,
+        "on_error": "结束_无体力进行进化石扫荡",
+        "roi": [
+            1089,
+            625,
+            154,
+            55
+        ],
+        "expected": "自动战斗"
+    },
+    "判断_是否可进行进化石自动战斗": {
+        "recognition": "ColorMatch",
+        "action": "Click",
+        "next": "点击_进化石最大体力",
+        "roi": [
+            1089,
+            625,
+            154,
+            55
+        ],
+        "lower": [
+            255,
+            205,
+            17
+        ],
+        "upper": [
+            255,
+            205,
+            17
+        ]
+    },
+    "点击_进化石最大体力": {
+        "action": "Click",
+        "next": "点击_进化石扫荡",
+        "target": [
+            867,
+            399,
+            12,
+            12
+        ]
+    },
+    "点击_进化石扫荡": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_确认进化石奖励",
+        "interrupt": "点击_确认",
+        "post_delay": 5000,
+        "focus_tip": "动作：进化石副本扫荡",
+        "focus_tip_color": "Pink",
+        "roi": [
+            748,
+            610,
+            192,
+            52
+        ],
+        "expected": "扫荡"
+    },
+    "点击_确认进化石奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭弹窗并退出X2",
+        "roi": [
+            537,
+            571,
+            203,
+            51
+        ],
+        "expected": "确认"
+    },
+    "结束_无体力进行进化石扫荡": {
+        "next": "点击_左上角退出X2",
+        "focus_tip": "提示：无体力进行进化石扫荡，跳过"
     },
     "任务_圆形角斗场": {
         "next": "点击_游玩按钮_圆形"
@@ -188,12 +298,12 @@
         ],
         "lower": [
             255,
-            207,
+            205,
             17
         ],
         "upper": [
             255,
-            207,
+            205,
             17
         ]
     },
@@ -201,18 +311,17 @@
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_确认奖励_圆形角斗场",
-        "rate_limit": 3000,
         "timeout": 60000,
         "post_delay": 20000,
+        "focus_tip": "动作：开始圆形角斗场战斗",
+        "focus_tip_color": "Pink",
         "roi": [
             736,
             618,
             140,
             48
         ],
-        "expected": "开始战斗",
-        "focus_tip": "动作：开始圆形角斗场战斗",
-        "focus_tip_color": "Pink"
+        "expected": "开始战斗"
     },
     "点击_确认奖励_圆形角斗场": {
         "recognition": "OCR",
@@ -222,17 +331,17 @@
             "点击_关闭弹窗",
             "点击_确认"
         ],
-        "timeout": 5000,
-        "post_delay": 5000,
+        "timeout": 3000,
         "on_error": "点击_左上角退出X2",
+        "post_delay": 5000,
+        "focus_tip": "提示：领取圆形角斗场奖励",
         "roi": [
             936,
             629,
             207,
             56
         ],
-        "expected": "确认",
-        "focus_tip": "提示：领取圆形角斗场奖励"
+        "expected": "确认"
     },
     "结束_圆形角斗场无次数并退出": {
         "next": "点击_左上角退出X2",

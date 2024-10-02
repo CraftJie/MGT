@@ -1,38 +1,35 @@
 {
     "任务_打开APP": {
-        "next": "点击_游戏图标",
-        "rate_limit": 2000
+        "next": "点击_游戏图标"
     },
     "点击_游戏图标": {
         "recognition": "TemplateMatch",
-        "template": "游戏图标.png",
         "action": "Click",
         "next": [
             "点击_游戏图标",
             "点击_开始游戏"
         ],
-        "rate_limit": 1000,
-        "post_delay": 20000,
         "on_error": "点击_空屏",
-        "focus_tip": "动作：点击游戏图标"
+        "post_delay": 20000,
+        "focus_tip": "动作：点击游戏图标",
+        "template": "游戏图标.png"
     },
     "点击_开始游戏": {
         "recognition": "OCR",
-        "expected": "点击开始",
+        "action": "Click",
+        "next": [
+            "点击_开始游戏",
+            "结束"
+        ],
+        "post_delay": 15000,
+        "focus_tip": "动作：点击开始游戏",
         "roi": [
             500,
             600,
             270,
             70
         ],
-        "action": "Click",
-        "next": [
-            "点击_开始游戏",
-            "结束"
-        ],
-        "rate_limit": 3000,
-        "post_delay": 15000,
-        "focus_tip": "动作：点击开始游戏"
+        "expected": "点击开始"
     },
     "点击_空屏": {
         "action": "Click",

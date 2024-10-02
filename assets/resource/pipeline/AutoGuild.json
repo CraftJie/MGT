@@ -10,6 +10,7 @@
     },
     "判断_是否进行公会签到": {
         "recognition": "ColorMatch",
+        "next": "点击_公会",
         "roi": [
             500,
             645,
@@ -25,8 +26,7 @@
             255,
             49,
             49
-        ],
-        "next": "点击_公会"
+        ]
     },
     "点击_公会": {
         "recognition": "OCR",
@@ -125,7 +125,6 @@
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_确认回到主城",
-        "pre_delay": 600,
         "roi": [
             1218,
             17,
@@ -141,6 +140,6 @@
         "expected": "确认"
     },
     "结束_公会已签到并跳过": {
-        "focus_tip": "公会已签到，跳过"
+        "focus_tip": "提示：公会已签到，跳过"
     }
 }
