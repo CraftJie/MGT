@@ -1,57 +1,71 @@
 {
     "点击_关闭弹窗": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭弹窗",
+        "action": "Click",
+        "pre_delay": 400,
+        "post_delay": 600,
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "action": "Click",
-        "pre_delay": 400,
-        "post_delay": 600
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_左上角退出": {
         "recognition": "TemplateMatch",
         "action": "Click",
-        "template": "左上角退出按钮.png",
+        "pre_delay": 500,
+        "post_delay": 500,
         "roi": [
             16,
             10,
             59,
             52
         ],
+        "template": "左上角退出按钮.png"
+    },
+    "点击_左上角退出X2": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_左上角退出",
         "pre_delay": 500,
-        "post_delay": 500
+        "post_delay": 1500,
+        "roi": [
+            16,
+            10,
+            59,
+            52
+        ],
+        "template": "左上角退出按钮.png"
     },
     "点击_关闭弹窗并退出": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭弹窗",
+        "action": "Click",
         "next": "点击_左上角退出",
+        "pre_delay": 400,
+        "post_delay": 600,
         "roi": [
             540,
             650,
             195,
             40
         ],
-        "action": "Click",
-        "pre_delay": 400,
-        "post_delay": 600
+        "expected": "点击空白处关闭弹窗"
     },
-    "点击_左上角退出X2": {
-        "recognition": "TemplateMatch",
+    "点击_关闭弹窗并退出X2": {
+        "recognition": "OCR",
         "action": "Click",
-        "template": "左上角退出按钮.png",
-        "next": "点击_左上角退出",
+        "next": "点击_左上角退出X2",
+        "pre_delay": 400,
+        "post_delay": 600,
         "roi": [
-            16,
-            10,
-            59,
-            52
+            540,
+            650,
+            195,
+            40
         ],
-        "pre_delay": 500,
-        "post_delay": 1500
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_确认": {
         "recognition": "OCR",
@@ -65,13 +79,13 @@
     "点击_扫荡次数+1": {
         "recognition": "TemplateMatch",
         "action": "Click",
-        "template": "扫荡次数+1.png",
+        "post_delay": 1000,
         "roi": [
             895,
             410,
             41,
             42
         ],
-        "post_delay": 1000
+        "template": "扫荡次数+1.png"
     }
 }

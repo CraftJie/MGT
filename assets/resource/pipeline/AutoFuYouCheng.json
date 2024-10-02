@@ -145,22 +145,37 @@
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_灵魂币确认",
+        "timeout": 3000,
         "roi": [
             690,
             31,
             510,
             604
         ],
-        "template": "浮游城_商店_灵魂币.png",
-        "timeout": 3000
+        "template": "浮游城_商店_灵魂币.png"
     },
     "点击_灵魂币确认": {
         "recognition": "TemplateMatch",
         "action": "Click",
-        "next": "点击_灵魂币商品",
-        "interrupt": "点击_关闭弹窗",
+        "next": "点击_灵魂币商品弹窗",
         "timeout": 2000,
         "template": "浮游城_商店_灵魂币确认.png"
+    },
+    "点击_灵魂币商品弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_灵魂币商品",
+        "timeout": 2000,
+        "on_error": "点击_退出浮游城商店",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗"
     },
     "点击_退出浮游城商店": {
         "recognition": "TemplateMatch",
