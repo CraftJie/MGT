@@ -9,7 +9,8 @@
             "点击_2周内不再提示"
         ],
         "interrupt": "点击_关闭弹窗",
-        "timeout": 6000
+        "timeout": 6000,
+        "on_error": "结束"
     },
     "点击_X": {
         "recognition": "TemplateMatch",
