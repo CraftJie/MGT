@@ -17,7 +17,7 @@
         {
             "name": "B服",
             "path": [
-                "{PROJECT_DIR}/resource/base"
+                "{PROJECT_DIR}/resource"
             ]
         }
     ],
@@ -129,5 +129,8 @@
                 }
             ]
         }
-    }
+    },
+    "name": "MGT",
+    "url": "https://github.com/CraftJie/MGT",
+    "version": "v0.1.3"
 }
