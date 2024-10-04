@@ -137,7 +137,13 @@
         "recognition": "OCR",
         "action": "Click",
         "post_delay": 8000,
-        "expected": "确认"
+        "expected": "确认",
+        "roi": [
+            296,
+            93,
+            688,
+            531
+        ]
     },
     "结束_公会已签到并跳过": {
         "focus_tip": "提示：公会已签到，跳过"
