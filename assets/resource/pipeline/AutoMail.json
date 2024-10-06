@@ -1,0 +1,116 @@
+{
+    "任务_每日邮件领取": {
+        "next": "点击_邮件"
+    },
+    "点击_邮件": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_系统邮件",
+        "roi": [
+            1064,
+            10,
+            198,
+            54
+        ],
+        "template": "邮件.png"
+    },
+    "点击_系统邮件": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "选择_邮件领取数量",
+        "roi": [
+            0,
+            0,
+            320,
+            320
+        ],
+        "expected": "系统邮件"
+    },
+    "选择_邮件领取数量": {},
+    "动作:邮件领取数量X1": {
+        "next": "判断_第一封为每日登录奖励",
+        "timeout": 2000,
+        "on_error": "判断_第二封为每日登录奖励"
+    },
+    "判断_第一封为每日登录奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_接收并删除_邮件",
+        "roi": [
+            337,
+            87,
+            920,
+            95
+        ],
+        "expected": "每日登录奖励"
+    },
+    "判断_第二封为每日登录奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_接收并删除_邮件",
+        "roi": [
+            338,
+            184,
+            920,
+            91
+        ],
+        "expected": "每日登录奖励"
+    },
+    "点击_接收并删除_邮件": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_回到主界面队列",
+        "focus_tip": "动作：领取每日登录奖励邮件",
+        "focus_tip_color": "Pink",
+        "roi": [
+            533,
+            583,
+            213,
+            57
+        ],
+        "expected": "接收并删除"
+    },
+    "动作:邮件领取数量X2": {
+        "next": "判断_第一封为每日登录奖励X2"
+    },
+    "判断_第一封为每日登录奖励X2": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_接收并删除_邮件X2",
+        "roi": [
+            337,
+            87,
+            920,
+            95
+        ],
+        "expected": "每日登录奖励"
+    },
+    "点击_接收并删除_邮件X2": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "点击_关闭邮件奖励弹窗",
+        "focus_tip": "动作：领取每日登录奖励邮件",
+        "focus_tip_color": "Pink",
+        "roi": [
+            533,
+            583,
+            213,
+            57
+        ],
+        "expected": "接收并删除"
+    },
+    "点击_关闭邮件奖励弹窗": {
+        "recognition": "OCR",
+        "action": "Click",
+        "next": "动作:邮件领取数量X1",
+        "pre_delay": 400,
+        "post_delay": 600,
+        "roi": [
+            540,
+            650,
+            195,
+            40
+        ],
+        "expected": "点击空白处关闭弹窗"
+    }
+}
