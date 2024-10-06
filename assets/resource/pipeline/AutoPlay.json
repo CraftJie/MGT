@@ -315,7 +315,6 @@
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_裂痕_进化石",
-        "post_delay": 1000,
         "roi": [
             784,
             653,
@@ -339,8 +338,7 @@
     "选择_进化石副本属性": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "判断_是否为进化石自动战斗",
-        "post_delay": 1000
+        "next": "判断_是否为进化石自动战斗"
     },
     "判断_是否为进化石自动战斗": {
         "recognition": "OCR",
@@ -411,8 +409,7 @@
     "点击_进化石扫荡": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_确认进化石奖励",
-        "interrupt": "点击_确认",
+        "next": "点击_回到主界面队列",
         "post_delay": 5000,
         "focus_tip": "动作：进化石副本扫荡",
         "focus_tip_color": "Pink",
@@ -423,18 +420,6 @@
             52
         ],
         "expected": "扫荡"
-    },
-    "点击_确认进化石奖励": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_关闭弹窗并退出X2",
-        "roi": [
-            537,
-            571,
-            203,
-            51
-        ],
-        "expected": "确认"
     },
     "任务_圆形角斗场": {
         "next": "点击_游玩按钮_圆形"

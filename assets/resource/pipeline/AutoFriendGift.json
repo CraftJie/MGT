@@ -22,7 +22,7 @@
             "判断_不可进行一键领取送礼"
         ],
         "timeout": 3000,
-        "on_error": "点击_退出好友界面",
+        "on_error": "点击_回到主界面队列",
         "post_delay": 800,
         "roi": [
             227,
@@ -35,13 +35,7 @@
     "判断_可进行一键领取送礼": {
         "recognition": "ColorMatch",
         "action": "Click",
-        "next": [
-            "点击_关闭好友礼物弹窗",
-            "点击_确认向好友发送礼物"
-        ],
-        "timeout": 3000,
-        "on_error": "点击_退出好友界面",
-        "pre_delay": 500,
+        "next": "点击_回到主界面队列",
         "focus_tip": "动作：一键领取并送礼",
         "focus_tip_color": "Pink",
         "roi": [
@@ -61,47 +55,9 @@
             23
         ]
     },
-    "点击_关闭好友礼物弹窗": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_退出好友界面",
-        "pre_delay": 400,
-        "post_delay": 600,
-        "roi": [
-            540,
-            650,
-            195,
-            40
-        ],
-        "expected": "点击空白处关闭弹窗"
-    },
-    "点击_确认向好友发送礼物": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_退出好友界面",
-        "expected": "确认"
-    },
-    "点击_退出好友界面": {
-        "recognition": "OCR",
-        "action": "Click",
-        "pre_delay": 500,
-        "roi": [
-            62,
-            13,
-            67,
-            49
-        ],
-        "expected": "好友",
-        "target": [
-            40,
-            27,
-            15,
-            15
-        ]
-    },
     "判断_不可进行一键领取送礼": {
         "recognition": "ColorMatch",
-        "next": "点击_退出好友界面",
+        "next": "点击_回到主界面队列",
         "roi": [
             372,
             644,
@@ -109,13 +65,13 @@
             28
         ],
         "lower": [
-            120,
-            121,
-            123
+            118,
+            118,
+            118
         ],
         "upper": [
-            120,
-            121,
+            123,
+            123,
             123
         ],
         "focus_tip": "提示：无好友礼物可领取"

@@ -5,7 +5,7 @@
             "点击_关闭弹窗",
             "点击_左上角退出"
         ],
-        "timeout": 3000,
+        "timeout": 5000,
         "on_error": "结束_公会已签到并跳过"
     },
     "判断_是否进行公会签到": {
@@ -14,8 +14,8 @@
         "roi": [
             500,
             645,
-            25,
-            25
+            30,
+            30
         ],
         "lower": [
             255,
@@ -33,10 +33,10 @@
         "action": "Click",
         "next": "点击_确认进入公会",
         "roi": [
-            50,
-            600,
-            500,
-            100
+            464,
+            668,
+            72,
+            38
         ],
         "expected": "公会"
     },
@@ -45,24 +45,8 @@
         "action": "Click",
         "next": "点击_和公会NPC交互",
         "interrupt": "滑动_移动到公会NPC处",
-        "post_delay": 8000,
+        "post_delay": 6000,
         "expected": "确认"
-    },
-    "点击_和公会NPC交互": {
-        "recognition": "TemplateMatch",
-        "action": "Click",
-        "next": "点击_公会签到奖励",
-        "timeout": 10000,
-        "on_error": "点击_关闭公会签到界面",
-        "pre_delay": 400,
-        "post_delay": 1000,
-        "roi": [
-            1090,
-            535,
-            110,
-            110
-        ],
-        "template": "公会NPC交互.png"
     },
     "滑动_移动到公会NPC处": {
         "action": "Swipe",
@@ -78,6 +62,21 @@
             1,
             1
         ]
+    },
+    "点击_和公会NPC交互": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "next": "点击_公会签到奖励",
+        "on_error": "点击_关闭公会签到界面",
+        "pre_delay": 400,
+        "post_delay": 1000,
+        "roi": [
+            1090,
+            535,
+            110,
+            110
+        ],
+        "template": "公会NPC交互.png"
     },
     "点击_公会签到奖励": {
         "recognition": "OCR",
