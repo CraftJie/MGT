@@ -44,9 +44,29 @@
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_和公会NPC交互",
-        "interrupt": "滑动_移动到公会NPC处",
+        "interrupt": [
+            "滑动_移动到公会NPC处",
+            "点击_关闭公会排名奖励"
+        ],
         "post_delay": 6000,
         "expected": "确认"
+    },
+    "点击_关闭公会排名奖励": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "公会排名奖励",
+        "roi": [
+            347,
+            80,
+            588,
+            43
+        ],
+        "target": [
+            903,
+            91,
+            18,
+            18
+        ]
     },
     "滑动_移动到公会NPC处": {
         "action": "Swipe",
@@ -142,7 +162,8 @@
             93,
             688,
             531
-        ]
+        ],
+        "focus_tip": "提示：回到主界面"
     },
     "结束_公会已签到并跳过": {
         "focus_tip": "提示：公会已签到，跳过"

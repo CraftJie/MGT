@@ -266,7 +266,7 @@
     "点击_领取邀请函奖励": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_关闭弹窗并退出",
+        "next": "判断_回到主界面",
         "timeout": 3000,
         "on_error": "点击_左上角退出",
         "focus_tip": "动作：领取邀请函奖励",

@@ -186,6 +186,7 @@
             64,
             64
         ],
-        "template": "浮游城_商店_X.png"
+        "template": "浮游城_商店_X.png",
+        "focus_tip": "提示：退出浮游城商店"
     }
 }
