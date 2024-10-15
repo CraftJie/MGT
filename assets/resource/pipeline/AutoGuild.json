@@ -54,13 +54,13 @@
     "点击_关闭公会排名奖励": {
         "recognition": "OCR",
         "action": "Click",
-        "expected": "公会排名奖励",
         "roi": [
             347,
             80,
             588,
             43
         ],
+        "expected": "公会排名奖励",
         "target": [
             903,
             91,
@@ -156,16 +156,34 @@
         "recognition": "OCR",
         "action": "Click",
         "post_delay": 8000,
-        "expected": "确认",
+        "focus_tip": "提示：回到主界面",
         "roi": [
             296,
             93,
             688,
             531
         ],
-        "focus_tip": "提示：回到主界面"
+        "expected": "确认"
     },
     "结束_公会已签到并跳过": {
         "focus_tip": "提示：公会已签到，跳过"
+    },
+    "任务_陨石挖掘计划": {
+        "recognition": "TemplateMatch",
+        "action": "Swipe",
+        "template": "陨石挖掘计划.png",
+        "begin": [
+            1152,
+            611,
+            1,
+            1
+        ],
+        "end": [
+            1152,
+            565,
+            1,
+            1
+        ],
+        "duration": 480
     }
 }

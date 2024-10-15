@@ -159,7 +159,9 @@
         "action": "Click",
         "next": "点击_灵魂币商品弹窗",
         "timeout": 2000,
-        "template": "浮游城_商店_灵魂币确认.png"
+        "template": "浮游城_商店_灵魂币确认.png",
+        "focus_tip": "提示：购买灵魂币商品",
+        "focus_tip_color": "Pink"
     },
     "点击_灵魂币商品弹窗": {
         "recognition": "OCR",
@@ -186,7 +188,7 @@
             64,
             64
         ],
-        "template": "浮游城_商店_X.png",
+        "template": "右上角退出按钮.png",
         "focus_tip": "提示：退出浮游城商店"
     }
 }

@@ -12,12 +12,19 @@
         ],
         "expected": "点击空白处关闭弹窗"
     },
+    "判断_回到主界面队列": {
+        "recognition": "OCR",
+        "next": "点击_回到主界面队列",
+        "inverse": true,
+        "expected": "级"
+    },
     "点击_回到主界面队列": {
         "next": "判断_回到主界面",
         "interrupt": [
             "判断_左上角退出",
             "点击_关闭弹窗",
-            "点击_确认"
+            "点击_确认",
+            "点击_右上角退出"
         ],
         "timeout": 30000,
         "on_error": "提示:回到主界面失败"
@@ -83,13 +90,18 @@
     "点击_确认": {
         "recognition": "OCR",
         "action": "Click",
-        "roi": [
-            227,
-            81,
-            822,
-            638
-        ],
         "expected": "确认"
+    },
+    "点击_右上角退出": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "roi": [
+            1205,
+            11,
+            64,
+            64
+        ],
+        "template": "右上角退出按钮.png"
     },
     "结束": {
         "recognition": "DirectHit",

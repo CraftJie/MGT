@@ -1,10 +1,7 @@
 {
     "任务_领取任务奖励": {
         "next": "判断_是否进行领取任务奖励",
-        "interrupt": [
-            "点击_关闭弹窗",
-            "点击_左上角退出"
-        ],
+        "interrupt": "判断_回到主界面队列",
         "timeout": 3000,
         "on_error": "结束_无任务奖励可领取并跳过"
     },
@@ -86,7 +83,7 @@
             "点击_活跃度不足并退出"
         ],
         "interrupt": "点击_已获得x2",
-        "on_error": "点击_左上角退出",
+        "on_error": "点击_回到主界面队列",
         "roi": [
             90,
             620,
@@ -98,9 +95,7 @@
     "点击_每日任务奖励弹窗": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_左上角退出",
-        "pre_delay": 400,
-        "post_delay": 600,
+        "next": "点击_回到主界面队列",
         "focus_tip": "动作：领取每日任务奖励",
         "focus_tip_color": "Pink",
         "roi": [
@@ -113,7 +108,7 @@
     },
     "结束_已完成今天所有日常任务": {
         "recognition": "OCR",
-        "next": "点击_左上角退出",
+        "next": "点击_回到主界面队列",
         "expected": "已完成今天所有日常任务",
         "roi": [
             343,
@@ -140,7 +135,7 @@
     "点击_活跃度不足并退出": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_左上角退出",
+        "next": "点击_回到主界面队列",
         "roi": [
             432,
             310,
@@ -230,7 +225,7 @@
         "next": "判断_是否有邀请函奖励待领取",
         "interrupt": "点击_关闭弹窗",
         "timeout": 5000,
-        "on_error": "点击_左上角退出",
+        "on_error": "点击_回到主界面队列",
         "focus_tip": "动作：领取邀请函目标",
         "focus_tip_color": "Pink",
         "roi": [
@@ -266,7 +261,7 @@
     "点击_领取邀请函奖励": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "判断_回到主界面",
+        "next": "点击_回到主界面队列",
         "timeout": 3000,
         "on_error": "点击_左上角退出",
         "focus_tip": "动作：领取邀请函奖励",

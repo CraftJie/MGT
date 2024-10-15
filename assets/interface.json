@@ -42,8 +42,8 @@
             "checked": true
         },
         {
-            "name": "领取商场每日金币",
-            "entry": "任务_商场领取每日免费金币",
+            "name": "领取商店每日金币",
+            "entry": "任务_商店领取每日免费金币",
             "checked": true
         },
         {
@@ -92,6 +92,14 @@
             "name": "领取邀请函奖励",
             "entry": "任务_领取邀请函奖励",
             "checked": true
+        },
+        {
+            "name": "扭蛋机活动领取",
+            "entry": "任务_扭蛋机活动领取"
+        },
+        {
+            "name": "陨石挖掘计划(手动选择，调试中)",
+            "entry": "任务_陨石挖掘计划"
         }
     ],
     "option": {
@@ -198,5 +206,5 @@
     },
     "name": "MGT",
     "url": "https://github.com/CraftJie/MGT",
-    "version": "v0.1.3"
+    "version": "v0.2.2"
 }
