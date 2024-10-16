@@ -35,7 +35,7 @@
         "action": "Click",
         "next": "点击_每日免费金币",
         "timeout": 3000,
-        "on_error": "点击_退出商店",
+        "on_error": "点击_回到主界面队列",
         "roi": [
             60,
             225,
@@ -74,7 +74,7 @@
     "点击_关闭免费金币弹窗": {
         "recognition": "OCR",
         "action": "Click",
-        "next": "点击_退出商店",
+        "next": "点击_回到主界面队列",
         "pre_delay": 400,
         "post_delay": 600,
         "roi": [
@@ -84,23 +84,5 @@
             40
         ],
         "expected": "点击空白处关闭弹窗"
-    },
-    "点击_退出商店": {
-        "recognition": "OCR",
-        "action": "Click",
-        "post_delay": 1000,
-        "roi": [
-            64,
-            12,
-            65,
-            45
-        ],
-        "expected": "商店",
-        "target": [
-            40,
-            27,
-            15,
-            15
-        ]
     }
 }
