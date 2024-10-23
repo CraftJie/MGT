@@ -1,28 +1,19 @@
 {
     "任务_打开APP": {
-        "next": "点击_游戏图标"
-    },
-    "点击_游戏图标": {
-        "recognition": "TemplateMatch",
-        "action": "Click",
-        "next": [
-            "点击_游戏图标",
-            "点击_开始游戏"
-        ],
+        "action": "StartApp",
+        "package": "com.bilibili.snake",
+        "next": "点击_开始游戏",
+        "timeout": 40000,
         "on_error": "点击_空屏",
         "post_delay": 20000,
-        "focus_tip": "动作：点击游戏图标",
-        "template": "游戏图标.png"
+        "focus_tip": "动作：打开APP"
     },
     "点击_开始游戏": {
         "recognition": "OCR",
         "action": "Click",
-        "next": [
-            "点击_开始游戏",
-            "结束"
-        ],
+        "next": "点击_开始游戏",
         "post_delay": 15000,
-        "focus_tip": "动作：点击开始游戏",
+        "focus_tip": "动作：点击\"开始游戏\"",
         "roi": [
             500,
             600,
