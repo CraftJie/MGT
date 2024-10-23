@@ -1,79 +1,79 @@
 {
-    "任务_好友礼物领取及送礼": {
-        "next": "点击_菜单"
-    },
-    "点击_菜单": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_好友",
-        "roi": [
-            31,
-            607,
-            96,
-            98
-        ],
-        "expected": "菜单"
-    },
-    "点击_好友": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": [
-            "判断_可进行一键领取送礼",
-            "判断_不可进行一键领取送礼"
-        ],
-        "timeout": 3000,
-        "on_error": "点击_回到主界面队列",
-        "post_delay": 800,
-        "roi": [
-            227,
-            553,
-            103,
-            41
-        ],
-        "expected": "好友"
-    },
-    "判断_可进行一键领取送礼": {
-        "recognition": "ColorMatch",
-        "action": "Click",
-        "next": "点击_回到主界面队列",
-        "focus_tip": "动作：一键领取并送礼",
-        "focus_tip_color": "Pink",
-        "roi": [
-            363,
-            639,
-            198,
-            43
-        ],
-        "lower": [
-            255,
-            200,
-            20
-        ],
-        "upper": [
-            255,
-            208,
-            23
-        ]
-    },
-    "判断_不可进行一键领取送礼": {
-        "recognition": "ColorMatch",
-        "next": "点击_回到主界面队列",
-        "roi": [
-            372,
-            644,
-            37,
-            28
-        ],
-        "lower": [
-            118,
-            118,
-            118
-        ],
-        "upper": [
-            123,
-            123,
-            123
-        ],
-        "focus_tip": "提示：无好友礼物可领取"
-    }
+  "任务_好友礼物领取及送礼": {
+    "next": "点击_菜单"
+  },
+  "点击_菜单": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": "点击_好友",
+    "roi": [
+      31,
+      607,
+      96,
+      98
+    ],
+    "expected": "菜单"
+  },
+  "点击_好友": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "判断_可进行一键领取送礼",
+      "判断_不可进行一键领取送礼"
+    ],
+    "timeout": 3000,
+    "on_error": "点击_回到主界面队列",
+    "post_delay": 800,
+    "roi": [
+      227,
+      553,
+      103,
+      41
+    ],
+    "expected": "好友"
+  },
+  "判断_可进行一键领取送礼": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "next": "点击_回到主界面队列",
+    "focus_tip": "动作：一键领取并送礼",
+    "focus_tip_color": "Pink",
+    "roi": [
+      363,
+      639,
+      198,
+      43
+    ],
+    "lower": [
+      255,
+      200,
+      20
+    ],
+    "upper": [
+      255,
+      208,
+      23
+    ]
+  },
+  "判断_不可进行一键领取送礼": {
+    "recognition": "ColorMatch",
+    "next": "点击_回到主界面队列",
+    "focus_tip": "提示：无好友礼物可领取",
+    "roi": [
+      372,
+      644,
+      37,
+      28
+    ],
+    "lower": [
+      118,
+      118,
+      118
+    ],
+    "upper": [
+      123,
+      123,
+      123
+    ]
+  }
 }
