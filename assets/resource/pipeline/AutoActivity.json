@@ -1,7 +1,6 @@
 {
     "任务_扭蛋机活动领取": {
         "next": "点击_扭蛋机活动",
-        "rate_limit": 2000,
         "timeout": 20000,
         "on_error": "结束_未识别到扭蛋机活动"
     },
@@ -24,6 +23,7 @@
             "判断_可一键领取_扭蛋机",
             "判断_不可一键领取_扭蛋机"
         ],
+        "post_delay": 800,
         "roi": [
             1123,
             563,
@@ -36,6 +36,7 @@
         "recognition": "ColorMatch",
         "action": "Click",
         "next": "点击_回到主界面队列",
+        "interrupt": "点击_活动目标_扭蛋机",
         "focus_tip": "提示：领取扭蛋机活动目标",
         "focus_tip_color": "Pink",
         "roi": [
@@ -77,6 +78,7 @@
         ]
     },
     "结束_未识别到扭蛋机活动": {
-        "focus_tip": "提示：未识别到扭蛋机活动"
+        "focus_tip": "提示：未识别到扭蛋机活动",
+        "focus_tip_color": "Red"
     }
 }
