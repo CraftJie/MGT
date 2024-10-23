@@ -80,7 +80,7 @@
             ]
         },
         {
-            "name": "圆形角斗场(默认选择第二个，只适合摆烂玩家)",
+            "name": "圆形角斗场(自动选择最小战斗力的敌人)",
             "entry": "任务_圆形角斗场"
         },
         {
@@ -206,5 +206,5 @@
     },
     "name": "MGT",
     "url": "https://github.com/CraftJie/MGT",
-    "version": "v0.2.2"
+    "version": "v0.2.3"
 }

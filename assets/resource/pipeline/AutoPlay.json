@@ -118,15 +118,15 @@
     },
     "点击_左上角退出-觉醒副本无扫荡次数": {
         "recognition": "OCR",
-        "expected": "挑战券兑换",
         "next": "点击_回到主界面队列",
+        "focus_tip": "提示：觉醒副本无扫荡次数，跳过",
         "roi": [
             46,
             444,
             388,
             231
         ],
-        "focus_tip": "提示：觉醒副本无扫荡次数，跳过"
+        "expected": "挑战券兑换"
     },
     "任务_忒提斯英雄传扫荡": {
         "next": "点击_游玩按钮_忒提斯英雄传"
@@ -160,13 +160,13 @@
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_挑战开始_忒提斯英雄传",
-        "expected": "忒提斯英雄传",
         "roi": [
             44,
             150,
             1191,
             526
-        ]
+        ],
+        "expected": "忒提斯英雄传"
     },
     "点击_挑战开始_忒提斯英雄传": {
         "recognition": "TemplateMatch",
@@ -174,13 +174,13 @@
         "next": "点击_扫荡_忒提斯英雄传",
         "timeout": 3000,
         "on_error": "点击_回到主界面队列",
-        "template": "挑战开始_忒提斯英雄传.png",
         "roi": [
             789,
             452,
             486,
             265
-        ]
+        ],
+        "template": "挑战开始_忒提斯英雄传.png"
     },
     "点击_扫荡_忒提斯英雄传": {
         "recognition": "OCR",
@@ -189,75 +189,75 @@
             "选择_忒提斯英雄传扫荡次数",
             "结束_体力不足_忒提斯英雄传"
         ],
-        "expected": "扫荡",
         "roi": [
             1050,
             625,
             193,
             56
-        ]
+        ],
+        "expected": "扫荡"
     },
     "选择_忒提斯英雄传扫荡次数": {
         "recognition": "OCR",
-        "expected": "扫荡",
         "roi": [
             647,
             611,
             236,
             51
-        ]
+        ],
+        "expected": "扫荡"
     },
     "点击_扫荡X5_忒提斯英雄传": {
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_扫荡+2_忒提斯英雄传",
-        "template": "扫荡次数+1.png",
-        "threshold": 0.85,
         "roi": [
             320,
             88,
             637,
             506
-        ]
+        ],
+        "template": "扫荡次数+1.png",
+        "threshold": 0.85
     },
     "点击_扫荡+2_忒提斯英雄传": {
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_扫荡+3_忒提斯英雄传",
-        "template": "扫荡次数+1.png",
-        "threshold": 0.85,
         "roi": [
             320,
             88,
             637,
             506
-        ]
+        ],
+        "template": "扫荡次数+1.png",
+        "threshold": 0.85
     },
     "点击_扫荡+3_忒提斯英雄传": {
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_扫荡+4_忒提斯英雄传",
-        "template": "扫荡次数+1.png",
-        "threshold": 0.85,
         "roi": [
             320,
             88,
             637,
             506
-        ]
+        ],
+        "template": "扫荡次数+1.png",
+        "threshold": 0.85
     },
     "点击_扫荡+4_忒提斯英雄传": {
         "recognition": "TemplateMatch",
         "action": "Click",
         "next": "点击_开始扫荡_忒提斯英雄传",
-        "template": "扫荡次数+1.png",
-        "threshold": 0.85,
         "roi": [
             320,
             88,
             637,
             506
-        ]
+        ],
+        "template": "扫荡次数+1.png",
+        "threshold": 0.85
     },
     "点击_扫荡XMAX_忒提斯英雄传": {
         "action": "Click",
@@ -273,34 +273,34 @@
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_回到主界面队列",
-        "expected": "扫荡",
+        "focus_tip": "动作：忒提斯英雄传扫荡",
+        "focus_tip_color": "Pink",
         "roi": [
             647,
             611,
             236,
             51
         ],
-        "focus_tip": "动作：忒提斯英雄传扫荡",
-        "focus_tip_color": "Pink"
+        "expected": "扫荡"
     },
     "结束_体力不足_忒提斯英雄传": {
         "recognition": "OCR",
         "action": "Click",
         "next": "点击_回到主界面队列",
-        "expected": "体力不足",
+        "focus_tip": "提示：体力不足，退出忒提斯英雄传",
         "roi": [
             296,
             140,
             684,
             396
         ],
+        "expected": "体力不足",
         "target": [
             422,
             555,
             211,
             54
-        ],
-        "focus_tip": "提示：体力不足，退出忒提斯英雄传"
+        ]
     },
     "任务_进化石副本": {
         "next": "点击_游玩按钮_进化石"
@@ -372,6 +372,7 @@
     "判断_不可进行进化石自动战斗": {
         "recognition": "ColorMatch",
         "next": "点击_回到主界面队列",
+        "focus_tip": "提示：体力不足，退出进化石扫荡",
         "roi": [
             1097,
             632,
@@ -387,8 +388,7 @@
             126,
             126,
             126
-        ],
-        "focus_tip": "提示：体力不足，退出进化石扫荡"
+        ]
     },
     "点击_进化石最大体力": {
         "action": "Click",
@@ -414,213 +414,5 @@
             52
         ],
         "expected": "扫荡"
-    },
-    "任务_圆形角斗场": {
-        "next": "点击_游玩按钮_圆形"
-    },
-    "点击_游玩按钮_圆形": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_PvP_圆形",
-        "post_delay": 1000,
-        "roi": [
-            784,
-            653,
-            451,
-            56
-        ],
-        "expected": "游玩"
-    },
-    "点击_PvP_圆形": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_圆形角斗场",
-        "roi": [
-            42,
-            91,
-            1192,
-            254
-        ],
-        "expected": "PvP"
-    },
-    "点击_圆形角斗场": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": [
-            "判断_第二位敌人可进攻",
-            "判断_第二位敌人不可进攻"
-        ],
-        "interrupt": [
-            "点击_X_战斗记录",
-            "点击_关闭弹窗"
-        ],
-        "timeout": 3000,
-        "on_error": "结束_圆形角斗场无次数并退出",
-        "roi": [
-            44,
-            149,
-            1190,
-            527
-        ],
-        "expected": "圆形角斗场"
-    },
-    "判断_第二位敌人可进攻": {
-        "recognition": "ColorMatch",
-        "action": "Click",
-        "next": "点击_开始战斗_圆形角斗场",
-        "interrupt": "点击_确认",
-        "roi": [
-            1062,
-            519,
-            25,
-            61
-        ],
-        "lower": [
-            255,
-            205,
-            17
-        ],
-        "upper": [
-            255,
-            207,
-            17
-        ]
-    },
-    "判断_第二位敌人不可进攻": {
-        "recognition": "ColorMatch",
-        "next": "结束_圆形角斗场无次数并退出",
-        "roi": [
-            1062,
-            519,
-            25,
-            61
-        ],
-        "lower": [
-            126,
-            126,
-            126
-        ],
-        "upper": [
-            126,
-            126,
-            126
-        ]
-    },
-    "点击_开始战斗_圆形角斗场": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": [
-            "点击_段位更新_圆形角斗场",
-            "判断_本场结果为胜利_圆形角斗场",
-            "判断_本场结果为失败_圆形角斗场"
-        ],
-        "rate_limit": 3000,
-        "timeout": 100000,
-        "on_error": "结束_圆形角斗场挑战超时并退出",
-        "post_delay": 20000,
-        "focus_tip": "动作：开始圆形角斗场战斗",
-        "focus_tip_color": "Pink",
-        "roi": [
-            736,
-            618,
-            140,
-            48
-        ],
-        "expected": "开始战斗"
-    },
-    "点击_段位更新_圆形角斗场": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": "点击_确认奖励_圆形角斗场",
-        "interrupt": "点击_确认",
-        "expected": "段位更新",
-        "focus_tip": "提示：圆形角斗场段位更新",
-        "focus_tip_color": "Pink",
-        "roi": [
-            316,
-            113,
-            649,
-            491
-        ],
-        "target": [
-            586,
-            541,
-            102,
-            36
-        ]
-    },
-    "判断_本场结果为胜利_圆形角斗场": {
-        "recognition": "OCR",
-        "next": "点击_确认奖励_圆形角斗场",
-        "roi": [
-            61,
-            58,
-            203,
-            139
-        ],
-        "expected": "胜利",
-        "focus_tip": "提示：圆形角斗场胜利",
-        "focus_tip_color": "Pink"
-    },
-    "判断_本场结果为失败_圆形角斗场": {
-        "recognition": "OCR",
-        "next": "点击_确认奖励_圆形角斗场",
-        "roi": [
-            61,
-            58,
-            203,
-            139
-        ],
-        "expected": "失败",
-        "focus_tip": "提示：圆形角斗场失败",
-        "focus_tip_color": "Red"
-    },
-    "点击_确认奖励_圆形角斗场": {
-        "recognition": "OCR",
-        "action": "Click",
-        "next": [
-            "判断_第二位敌人可进攻",
-            "判断_第二位敌人不可进攻"
-        ],
-        "interrupt": [
-            "点击_关闭弹窗",
-            "点击_确认"
-        ],
-        "timeout": 6000,
-        "on_error": "点击_回到主界面队列",
-        "post_delay": 5000,
-        "focus_tip": "提示：领取圆形角斗场奖励",
-        "roi": [
-            936,
-            629,
-            207,
-            56
-        ],
-        "expected": "确认"
-    },
-    "结束_圆形角斗场无次数并退出": {
-        "next": "点击_回到主界面队列",
-        "focus_tip": "提示：圆形角斗场无次数，跳过"
-    },
-    "结束_圆形角斗场挑战超时并退出": {
-        "next": "点击_回到主界面队列",
-        "focus_tip": "提示：圆形角斗场挑战超时，跳过"
-    },
-    "点击_X_战斗记录": {
-        "recognition": "OCR",
-        "action": "Click",
-        "expected": "战斗记录",
-        "roi": [
-            201,
-            39,
-            879,
-            53
-        ],
-        "target": [
-            1047,
-            52,
-            18,
-            18
-        ]
     }
 }
